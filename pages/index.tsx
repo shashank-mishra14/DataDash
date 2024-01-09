@@ -1,5 +1,5 @@
 import Dashboard from "@/pages/dashboard";
-import Login from "@/components/Login";
+import Login from "@/components/Login/Login";
 import { useSession } from "next-auth/react";
 import scss from "../components/Layout/Layout.module.scss";
 import React from "react";
