@@ -7,7 +7,7 @@ const lightTheme :ThemeOptions = {
             main: '#ffff00',
         },
         secondary:{
-            main:'#ff8400',
+            main:'#b4b4b4',
         }
     }
 };
