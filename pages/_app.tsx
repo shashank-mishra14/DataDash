@@ -27,14 +27,14 @@ const App = ({Component, pageProps: {session, ...pageProps}}) => {
             createTheme({
                 ...darkTheme
             }),
-        [mode],
+        [],
     )
     const lightThemeChosen = React.useMemo(
         () =>
             createTheme({
                 ...lightTheme,
             }),
-        [mode],
+        [],
     )
     return (<ColorModeContext.Provider value={colorMode}>
             <ThemeProvider theme={mode === 'dark' ? darkThemeChosen : lightThemeChosen}>
