@@ -51,10 +51,10 @@ const closedMixin = (theme: Theme): CSSObject => ({
 const menuRouteList = ["data", "profile", "settings", ""];
 const menuListTranslations = ["Data", "Profile", "Settings", "Sign Out"];
 const menuListIcons = [
-  <EqualizerIcon key="equalizer" />,
-  <Person2Icon key="person2icon"/>,
-  <Settings key="settings" />,
-  <ExitToAppIcon key="exitToApp" />,
+  <EqualizerIcon key ="equalizer"/>,
+  <Person2Icon key ="person2icon"/>,
+  <Settings key ="settings"/>,
+  <ExitToAppIcon key ="exitToApplication"/>,
 ];
 
 const SideMenu = () => {
@@ -77,24 +77,17 @@ const SideMenu = () => {
       anchor="left"
       open={open}
       className={scss.sideMenu}
-      sx={{
+      sx={(theme) => ({
         width: drawerWidth,
-        [`& .MuiDrawer-paper`]: {
+        "& .MuiDrawer-paper": {
           left: 0,
           top: mobileCheck ? 64 : 57,
           flexShrink: 0,
           whiteSpace: "nowrap",
           boxSizing: "border-box",
-          ...(open && {
-            ...openedMixin(theme),
-            "& .MuiDrawer-paper": openedMixin(theme),
-          }),
-          ...(!open && {
-            ...closedMixin(theme),
-            "& .MuiDrawer-paper": closedMixin(theme),
-          }),
+          ...(open ? openedMixin(theme) : closedMixin(theme)),
         },
-      }}
+      })}
     >
       <div className={scss.drawerHeader}>
         <IconButton onClick={handleDrawerToggle}>
